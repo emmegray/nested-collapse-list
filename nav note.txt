@@ -1,0 +1,184 @@
+		<nav>
+                    <ul>
+                        <li id="link-companies" onclick="toggleList()">COMPANIES
+                            <ul id="list-companies">
+                                <li><a href="#Adidas">Adidas</a></li>
+                            </ul>
+                        </li>
+                        <li id="link-rising" onclick="toggleList()">THE RISING OF A NEW GEN
+                            <ul id="list-rising">
+                                <li><a href="#LorenzoBertelli">Lorenzo</a></li>
+                            </ul></li>
+                    </ul>
+                </nav>
+
+
+var list = document.getElementById(list-companies);
+if (list.style.display === "none") { 
+    list.style.display = "block";   } else { 
+    list.style.display = "none";   }
+
+
+function toggleList(id) {
+            var list = document.getElementById(id);
+            if (list.style.display === "none") {
+                list.style.display = "block";
+            } else {
+                list.style.display = "none";
+            }
+        }
+
+        document.getElementById("link-companies").addEventListener("click", function (e) {
+            e.preventDefault();
+            toggleList("list-companies");
+        });
+
+        document.getElementById("link-rising").addEventListener("click", function (e) {
+            e.preventDefault();
+            toggleList("list-rising");
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById("link-companies").addEventListener("click", function(e) {
+e.preventDefault();
+toggleList("list-companies");
+});
+
+document.getElementById("link-rising").addEventListener("click", function(e) {
+e.preventDefault();
+toggleList("list-rising");
+});
+
+
+function toggleList(id) {
+  var list = document.getElementById(id);
+  if (list.style.display === "none") {
+    list.style.display = "block";
+  } else {
+    list.style.display = "none";
+  }
+}
+
+document.getElementById("Companies").addEventListener("click", function() {
+  toggleList("Companies");
+});
+
+document.getElementById("Rising").addEventListener("click", function() {
+  toggleList("Rising");
+});
+
+
+
+
+<li class="list-toogle" onclick="toogleList.call(this)"><a>COMPANIES</a>
+  <ul class="list-toogle" style="display:none;">
+    <li><a href="#Adidas">Adidas</a></li>
+  </ul>
+</li>
+<li class="list-toogle" onclick="toogleList.call(this)"><a>THE RISING OF A NEW GEN</a>
+  <ul class="list-toogle" style="display:none;">
+    <li><a href="#LorenzoBertelli">Lorenzo Bertelli</a></li>
+    <li><a href="#EdoardoZegna">Edoardo Zegna</a></li>
+  </ul>
+</li>
+
+
+
+
+
+
+function toggleNestedList() {
+  const nestedList = document.getElementsByClassName("nested-list")[0];
+  if (nestedList.style.display === "none") {
+    nestedList.style.display = "block";
+  } else {
+    nestedList.style.display = "none";
+  }
+}
+
+const toggleList = document.getElementsByClassName("toggle-list")[0];
+toggleList.addEventListener("click", toggleNestedList);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function toogleList() {
+  var companiesList = document.getElementsByClassName("list-toogle")[0].children[1];
+  var risingList = document.getElementsByClassName("list-toogle")[1].children[1];
+  if (companiesList.style.display === "none") {
+    companiesList.style.display = "block";
+  } else {
+    companiesList.style.display = "none";
+  }
+  if (risingList.style.display === "none") {
+    risingList.style.display = "block";
+  } else {
+    risingList.style.display = "none";
+  }
+}
+
+
+document.addEventListener("ready", function () {
+
+
+
+})
+
+
+
+
+
+
+
+.checkbox:not(checked) {
+  display: none;
+}
+
+.checkbox:not(checked) ~ .content {
+  display: none;
+}
+.checkbox:checked ~ .content {
+  display: block;
+}
+
+
+<div class="wrapper">
+        <div class="lp">
+          <input type="checkbox" value="selected" id="1" class="checkbox" />
+          <label for="1">Trigger</label>
+          <ul class="content">
+            <li><a href="#">First link</a></li>
+            <li><a href="#">Second link</a></li>
+            <li><a href="#">Third link</a></li>
+          </ul>
+        </div>

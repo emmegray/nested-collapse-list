@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List</title>
+
+<style>
+    .index-list ul {
+  margin-left: 10px;
+  padding-left: 20px;
+}
+
+.index-list li {
+ color: red;
+}
+
+.index-list a {
+  border-bottom: 1px solid transparent;
+  color: #888;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+#companies ul {
+  display: none;
+}
+
+/* (C) TOGGLE */
+.toggle {
+  cursor: pointer;
+}
+.toggle::before {
+  width: 15px;
+  content: "+";
+}
+.toggle.show::before { content: "-"; }
+
+/* (D) SHOW/HIDE */
+.collapse ul { display: none; }
+.toggle.show + ul { display: block; }
+
+
+</style>
+
+
+</head>
+<body>
+  <div class="wrapper">
+    <p>Styled nested list:</p>
+    <ul class="index-list">
+      <li><a href="#GruppoMastrotto">GRUPPO MASTRO</a></li>
+      <li><a href="#FINPROJECT">FIN PROJECT</a></li>
+      <li><a href="#RECORD">RECORD RISES LED BY ABERCROMBIE & FITCH</a></li>
+      <li class="collapse">
+          <a href="#" id="companies">COMPANIES</a>
+          <ul class="collapse">
+              <li><a href="#Adidas">Adidas</a></li>
+              <li><a href="#Burberry">Burberry</a></li>
+              <li><a href="#H&M">H&M</a></li>
+              <li><a href="#HugoBoss">Hugo Boss</a></li>
+              <li><a href="#Moncler">Moncler</a></li>
+              <li><a href="#NextPlc">Next Plc</a></li>
+              <li><a href="#Prada">Prada</a></li>
+              <li><a href="#Puma">Puma</a></li>
+          </ul>
+      </li>
+      <li class="collapse">
+          <a href="#" id="companies">THE RISING OF A NEW GEN</a>
+          <ul class="collapse">
+              <li><a href="#LorenzoBertelli">Lorenzo</a></li>
+              <li><a href="#AlessandroLorenzoBoglione">Alessandro and Lorenzo</a></li>
+              <li><a href="#LucillaLucreziaLunaBonaccorsi">Lucilla, Lucrezia and Luna</a></li>
+              <li><a href="#LucreziaBuccellati">Lucrezia</a></li>
+          </ul>
+      </li>
+      <li><a href="#Love">THE LOVE STORY BETWEEN KERMIT AND MISS PIGGY</a></li>
+  </ul>
+
+  <!-- (B) NESTED LIST -->
+  <ul class="collapse">
+    <li>
+      TITLE
+      <ul>
+        <li>A</li> <li>B</li>
+        <li>
+          SUB-TITLE
+          <ul>
+            <li>C</li> <li>D</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<script>
+  window.addEventListener("load", () => {
+  for (let i of document.querySelectorAll(".collapse ul")) {
+    let tog = document.createElement("div");
+    tog.innerHTML = i.previousSibling.textContent;
+    tog.className = "toggle";
+    tog.onclick = () => tog.classList.toggle("show");
+    i.parentElement.removeChild(i.previousSibling);
+    i.parentElement.insertBefore(tog, i);
+  }
+});
+</script>
+
+</body>
+
+</html>
